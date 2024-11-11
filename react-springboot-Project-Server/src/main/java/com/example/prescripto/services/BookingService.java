@@ -20,6 +20,12 @@ public class BookingService {
 		return bookingRepository.findCount(docId,date,time);
 		
 	}
+
+	public List<Long> findDoctorIdsByPatientId(int patientId) {
+		return bookingRepository.findDoctorIdsByPatientId(patientId);
+	}
+
+
 	
 
 }

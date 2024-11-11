@@ -15,8 +15,12 @@ public class Booking {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer bookingId;
 	
+	
 	@Column(name="docId")
 	private String docId;
+	
+	@Column(name="patientId")
+	private Integer patientId;
 	
 	@Column(name="date")
 	private String date;
@@ -54,6 +58,14 @@ public class Booking {
 
 	public void setTime(String time) {
 		this.time = time;
+	}
+
+	public Integer getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(Integer patientId) {
+		this.patientId = patientId;
 	}
 	
 	

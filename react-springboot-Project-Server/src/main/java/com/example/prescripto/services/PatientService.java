@@ -19,5 +19,15 @@ public class PatientService {
 	public void savePatient(Patient patient) {
 		patientRepository.save(patient);
 	}
+	
+	public void updatePatient(Patient patient) {
+		patientRepository.updatePatient(patient.getId(),patient.getEmailId(),patient.getPatientDob(),patient.getPatientGender(),patient.getPatientPhone(),patient.getPatientName());
+	}
+
+	public Integer getEmail(String emailId) {
+		return patientRepository.checkEmail(emailId);
+	}
+	
+	
 
 }
