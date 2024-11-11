@@ -39,5 +39,17 @@ public class DoctorService {
 		return doctorRepository.findByIdIn(doctorIds);
 	}
 
+	public void updateDoctor(Doctor doctor) {
+
+	    doctorRepository.updateDoctor(doctor.getAddressLineOne(),doctor.getAddressLineTwo(),doctor.getDoctorAbout(),doctor.getDoctorDegree(),doctor.getDoctorEmail(),doctor.getDoctorExperience(),doctor.getDoctorName(), doctor.getDoctorFees(),doctor.getDoctorPassword(),doctor.getDoctorSpeciality(),doctor.getId(),doctor.getDoctorImage());
+	}
+	
+	
+//	public void updateDoctor(Doctor doctor) {
+//	    doctorRepository.updateDoctor(doctor.getDoctorAbout(),doctor.getAddressLineOne(),doctor.getAddressLineTwo(),doctor.getDoctorAbout(),doctor.getDoctorDegree(),doctor.getDoctorEmail(),doctor.getDoctorExperience(),doctor.getDoctorFees());
+//	}
+
+	
+
 
 }

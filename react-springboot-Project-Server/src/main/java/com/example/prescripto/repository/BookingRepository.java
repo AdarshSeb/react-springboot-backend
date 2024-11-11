@@ -17,8 +17,10 @@ public interface BookingRepository extends JpaRepository<Booking, Integer> {
 	@Query(value = "select count(booking_id) from booking_table where doc_id = :docId AND date =:date AND time=:time", nativeQuery = true)
 	public Integer findCount(String docId, String date,String time);
 
-	@Query(value ="SELECT doc_id FROM booking_table  WHERE patient_id = :patientId",nativeQuery = true)
-    List<Long> findDoctorIdsByPatientId(int patientId);
+	@Query(value ="SELECT * FROM booking_table  WHERE patient_id = :patientId",nativeQuery = true)
+    List<Booking> findDoctorIdsByPatientId(int patientId);
 
+	
+	
 		
 }

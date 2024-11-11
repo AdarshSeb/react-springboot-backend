@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -62,8 +64,45 @@ public class DoctorController {
 
         doctorService.addDoctor(doctor);
     }
-	
-	
+	//update the doctor details
+//		@PutMapping("/update/{id}")
+//		public ResponseEntity<String> updateDoctor(
+//		    @PathVariable("id") Long doctorId,
+//		    @RequestParam("doctorName") String doctorName,
+//		    @RequestParam("doctorEmail") String doctorEmail,
+//		    @RequestParam("doctorPassword") String doctorPassword,
+//		    @RequestParam("doctorExperience") String doctorExperience,
+//		    @RequestParam("doctorFees") Double doctorFees,
+//		    @RequestParam("doctorSpeciality") String doctorSpeciality,
+//		    @RequestParam("doctorDegree") String doctorDegree,
+//		    @RequestParam("addressLineOne") String addressLineOne,
+//		    @RequestParam("addressLineTwo") String addressLineTwo,
+//		    @RequestParam("doctorAbout") String doctorAbout,
+//		    @RequestParam(value = "doctorImage", required = false) MultipartFile image) throws IOException {
+//			
+//			
+//			 Doctor doctor = new Doctor();
+//			doctor.setDoctorName(doctorName);
+//		    doctor.setDoctorEmail(doctorEmail);
+//		    doctor.setDoctorPassword(doctorPassword);
+//		    doctor.setDoctorExperience(doctorExperience);
+//		    doctor.setDoctorFees(doctorFees);
+//		    doctor.setDoctorSpeciality(doctorSpeciality);
+//		    doctor.setDoctorDegree(doctorDegree);
+//		    doctor.setAddressLineOne(addressLineOne);
+//		    doctor.setAddressLineTwo(addressLineTwo);
+//		    doctor.setDoctorAbout(doctorAbout);
+//		    doctor.setId(doctorId);
+//
+//		    
+//
+//		    doctorService.updateDoctor(doctor);
+//		    return ResponseEntity.ok("Doctor updated successfully.");
+//		}
+
+
+
+		
 	@GetMapping("/alldoctors")
 	public List<Doctor> getAllDoctors(){
 		return doctorService.getAllDoctors();
@@ -92,6 +131,15 @@ public class DoctorController {
 	            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Doctor not found.");
 	        }
 	    }
+	 
+	 
+	 
+	 @PutMapping("/update")
+		public void updateDoctor(@RequestBody Doctor doctor) {
+
+			doctorService.updateDoctor(doctor);
+
+		}
 	
 	
 }

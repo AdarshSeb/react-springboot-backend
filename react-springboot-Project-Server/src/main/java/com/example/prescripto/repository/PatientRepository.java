@@ -25,5 +25,7 @@ public interface PatientRepository extends JpaRepository<Patient, Integer>{
 
 	@Query(value = "SELECT id FROM patient_table WHERE patient_email =:emailId ", nativeQuery = true)
 	Integer checkEmail(String emailId);
+	
+	
 
 }
