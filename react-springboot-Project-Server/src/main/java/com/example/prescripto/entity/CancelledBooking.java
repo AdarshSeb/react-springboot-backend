@@ -57,11 +57,7 @@ public class CancelledBooking {
 	@Column(name = "doctor_fees")
 	private Double doctorFees;
 
-	@Column(name = "address_lineone")
-	private String addressLineOne;
-
-	@Column(name = "address_linetwo")
-	private String addressLineTwo;
+	
 
 	public Integer getCancelId() {
 		return cancelId;
@@ -169,22 +165,7 @@ public class CancelledBooking {
 		this.doctorFees = doctorFees;
 	}
 
-	public String getAddressLineOne() {
-		return addressLineOne;
-	}
-
-	public void setAddressLineOne(String addressLineOne) {
-		this.addressLineOne = addressLineOne;
-	}
-
-	public String getAddressLineTwo() {
-		return addressLineTwo;
-	}
-
-	public void setAddressLineTwo(String addressLineTwo) {
-		this.addressLineTwo = addressLineTwo;
-	}
-
+	
 
 
 	

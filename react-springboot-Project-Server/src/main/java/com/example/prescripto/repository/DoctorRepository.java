@@ -20,8 +20,15 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long>{
 	@Modifying
     @Transactional
 	@Query(value = "UPDATE doctor SET address_lineone=:addressLineOne, address_linetwo=:addressLineTwo, doctor_about=:doctorAbout, doctor_degree=:doctorDegree, doctor_email=:doctorEmail, doctor_experience=:doctorExperience, doctor_fees=:doctorFees, doctor_image=:doctorImage, doctor_name=:doctorName, doctor_password=:doctorPassword, doctor_speciality=:doctorSpeciality  WHERE doctor_id = :id", nativeQuery = true)
-    void updateDoctor(String addressLineOne, String addressLineTwo,String doctorAbout,
-			String doctorDegree, String doctorEmail, String doctorExperience, String doctorName, Double doctorFees, String doctorPassword, String doctorSpeciality, Long id, byte[] doctorImage);
+    void updateDoctor(
+    		Long id,
+    		String addressLineOne, String addressLineTwo,String doctorAbout,
+			String doctorDegree, String doctorEmail, String doctorExperience, 
+			 Double doctorFees,  byte[] doctorImage, String doctorName,String doctorPassword,
+			String doctorSpeciality );
+
+	@Query(value = "SELECT * FROM doctor WHERE doctor_email =:emailId AND doctor_password =:password", nativeQuery = true)
+	Doctor getDoctor(String emailId, String password);
 	
 	
 

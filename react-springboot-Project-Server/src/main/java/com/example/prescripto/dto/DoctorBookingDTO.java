@@ -10,8 +10,10 @@ public class DoctorBookingDTO {
     private String doctorExperience;
     private String doctorAbout;
     private Double doctorFees;
-    private byte[] doctorImage; // Assuming image is stored as byte array
+    private byte[] doctorImage; 
+    // Assuming image is stored as byte array
     private String date;
+    private String status;
     private String time;
     private Integer bookingId; // New field for booking ID
 
@@ -110,7 +112,15 @@ public class DoctorBookingDTO {
         return bookingId;
     }
 
-    public void setBookingId(Integer bookingId) {
+    public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setBookingId(Integer bookingId) {
         this.bookingId = bookingId;
     }
 }

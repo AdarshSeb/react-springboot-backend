@@ -1,5 +1,7 @@
 package com.example.prescripto.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class CancelledBookingService {
 	public void createCancelledBooking(CancelledBooking cancelledBookingDetails) {
 		cancelledBookingRepository.save(cancelledBookingDetails);
 		
+	}
+
+	public List<CancelledBooking> getBooking(Integer patientId) {
+		
+		return cancelledBookingRepository.getCancelledBooking(patientId);
 	}
 	
 

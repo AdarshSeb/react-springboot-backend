@@ -1,7 +1,12 @@
 package com.example.prescripto.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +28,13 @@ public class CancelledBookingController {
 	
 	@PostMapping
 	public void createCancelledBooking(@RequestBody CancelledBooking cancelledBookingDetails) {
-
 		cancelledBookingService.createCancelledBooking(cancelledBookingDetails);
+	}
+	
+	@GetMapping("/booking/{patientId}")
+	public List<CancelledBooking> getAllBookings(@PathVariable Integer patientId){
+		return cancelledBookingService.getBooking(patientId);
+		
 	}
 
 }

@@ -39,15 +39,20 @@ public class DoctorService {
 		return doctorRepository.findByIdIn(doctorIds);
 	}
 
-	public void updateDoctor(Doctor doctor) {
+	
 
-	    doctorRepository.updateDoctor(doctor.getAddressLineOne(),doctor.getAddressLineTwo(),doctor.getDoctorAbout(),doctor.getDoctorDegree(),doctor.getDoctorEmail(),doctor.getDoctorExperience(),doctor.getDoctorName(), doctor.getDoctorFees(),doctor.getDoctorPassword(),doctor.getDoctorSpeciality(),doctor.getId(),doctor.getDoctorImage());
+	public Doctor getDoctor(String emailId, String Password) {
+		
+		return doctorRepository.getDoctor(emailId,Password);
 	}
+
 	
 	
-//	public void updateDoctor(Doctor doctor) {
-//	    doctorRepository.updateDoctor(doctor.getDoctorAbout(),doctor.getAddressLineOne(),doctor.getAddressLineTwo(),doctor.getDoctorAbout(),doctor.getDoctorDegree(),doctor.getDoctorEmail(),doctor.getDoctorExperience(),doctor.getDoctorFees());
-//	}
+
+	public void updateDoctor(Doctor doctor) {
+	    doctorRepository.updateDoctor(doctor.getId(),doctor.getAddressLineOne(),doctor.getAddressLineTwo(),doctor.getDoctorAbout(),doctor.getDoctorDegree(),doctor.getDoctorEmail(),
+	    		doctor.getDoctorExperience(),doctor.getDoctorFees(),doctor.getDoctorImage(),doctor.getDoctorName(),doctor.getDoctorPassword(),doctor.getDoctorSpeciality());
+	}
 
 	
 

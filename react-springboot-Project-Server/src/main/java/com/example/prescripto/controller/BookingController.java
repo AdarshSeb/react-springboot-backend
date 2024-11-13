@@ -4,18 +4,19 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.prescripto.dto.AppoinmentDTO;
 import com.example.prescripto.dto.DoctorBookingDTO;
 import com.example.prescripto.entity.Booking;
 import com.example.prescripto.services.BookingService;
@@ -71,5 +72,22 @@ public class BookingController {
 
 		
 	}
+	
+
+	
+    @GetMapping("/getappoinments/{docId}")
+    public List<AppoinmentDTO> getDoctorAppointments(@PathVariable String docId) {
+        return bookingService.getDoctorAppointments(Integer.parseInt(docId));
+    }
+    
+    
+    @PutMapping("/updatestatus/{bookingId}/status")
+    public void updateBookingStatus(@PathVariable Integer bookingId, 
+                                       @RequestParam String status) {
+         bookingService.updateBookingStatus(bookingId, status);
+    }
+
+    
+
 
 }

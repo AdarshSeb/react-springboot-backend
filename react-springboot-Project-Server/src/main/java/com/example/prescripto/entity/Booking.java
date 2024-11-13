@@ -27,6 +27,18 @@ public class Booking {
 	
 	@Column(name="time")
 	private String time;
+	
+	@Column(name = "status")
+    private String status;
+
+//getter and setter
+	public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 	public Integer getBookingId() {
 		return bookingId;

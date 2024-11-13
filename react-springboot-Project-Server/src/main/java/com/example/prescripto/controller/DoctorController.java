@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.prescripto.entity.Doctor;
+import com.example.prescripto.entity.Patient;
 import com.example.prescripto.services.DoctorService;
 
 @RestController
@@ -64,41 +66,7 @@ public class DoctorController {
 
         doctorService.addDoctor(doctor);
     }
-	//update the doctor details
-//		@PutMapping("/update/{id}")
-//		public ResponseEntity<String> updateDoctor(
-//		    @PathVariable("id") Long doctorId,
-//		    @RequestParam("doctorName") String doctorName,
-//		    @RequestParam("doctorEmail") String doctorEmail,
-//		    @RequestParam("doctorPassword") String doctorPassword,
-//		    @RequestParam("doctorExperience") String doctorExperience,
-//		    @RequestParam("doctorFees") Double doctorFees,
-//		    @RequestParam("doctorSpeciality") String doctorSpeciality,
-//		    @RequestParam("doctorDegree") String doctorDegree,
-//		    @RequestParam("addressLineOne") String addressLineOne,
-//		    @RequestParam("addressLineTwo") String addressLineTwo,
-//		    @RequestParam("doctorAbout") String doctorAbout,
-//		    @RequestParam(value = "doctorImage", required = false) MultipartFile image) throws IOException {
-//			
-//			
-//			 Doctor doctor = new Doctor();
-//			doctor.setDoctorName(doctorName);
-//		    doctor.setDoctorEmail(doctorEmail);
-//		    doctor.setDoctorPassword(doctorPassword);
-//		    doctor.setDoctorExperience(doctorExperience);
-//		    doctor.setDoctorFees(doctorFees);
-//		    doctor.setDoctorSpeciality(doctorSpeciality);
-//		    doctor.setDoctorDegree(doctorDegree);
-//		    doctor.setAddressLineOne(addressLineOne);
-//		    doctor.setAddressLineTwo(addressLineTwo);
-//		    doctor.setDoctorAbout(doctorAbout);
-//		    doctor.setId(doctorId);
-//
-//		    
-//
-//		    doctorService.updateDoctor(doctor);
-//		    return ResponseEntity.ok("Doctor updated successfully.");
-//		}
+
 
 
 
@@ -135,11 +103,17 @@ public class DoctorController {
 	 
 	 
 	 @PutMapping("/update")
-		public void updateDoctor(@RequestBody Doctor doctor) {
+	public void  updateDoctor(@RequestBody Doctor doctor) {
+		 doctorService.updateDoctor(doctor);
+	 }
 
-			doctorService.updateDoctor(doctor);
+	 
+	 
+	 @GetMapping("/check")
+	 public Doctor getUser(@RequestParam("email") String emailId, @RequestParam("password") String password) {
+	     return doctorService.getDoctor(emailId, password);
+	 }
 
-		}
 	
 	
 }
