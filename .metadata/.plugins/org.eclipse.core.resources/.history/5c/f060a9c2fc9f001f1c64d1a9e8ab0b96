@@ -1,0 +1,5 @@
+package com.example.prescripto.services;
+
+public class CancelledBookingService {
+
+}

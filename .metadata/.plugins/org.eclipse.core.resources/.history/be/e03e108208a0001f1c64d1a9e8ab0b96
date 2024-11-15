@@ -1,0 +1,24 @@
+package com.example.prescripto.controller;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.prescripto.entity.CancelledBooking;
+
+@RestController
+@RequestMapping("/cancel")
+@CrossOrigin(origins = "http://localhost:5173")
+public class CancelledBookingController {
+	
+	
+	
+	@PostMapping
+	public void createBooking(@RequestBody CancelledBooking cancelledBookingDetails) {
+
+		bookingService.bookDoctor(bookingDetails);
+	}
+
+}

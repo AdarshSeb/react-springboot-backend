@@ -1,0 +1,17 @@
+package com.example.prescripto.dto;
+
+public class DoctorBookingDTO {
+
+	private Long doctorId;
+	private String doctorName;
+	private String doctorSpeciality;
+	private String doctorEmail;
+	private String doctorDegree;
+	private String doctorExperience;
+	private String doctorFees;
+	private String doctorAbout;
+	private String doctorImage;
+	private String date;
+	private String time;
+
+}

@@ -1,0 +1,5 @@
+package com.example.prescripto.entity;
+
+public class CancelledBooking {
+
+}

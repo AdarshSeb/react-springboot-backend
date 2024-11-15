@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;demoProject&apos; to &apos;reactSpringProjectServer&apos;" description="Rename resource &apos;demoProject&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/demoProject" name="reactSpringProjectServer" stamp="1730807671698" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;reactSpringProjectServer&apos; to &apos;react-springboot-Project-Server&apos;" description="Rename resource &apos;reactSpringProjectServer&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/reactSpringProjectServer" name="react-springboot-Project-Server" stamp="1730864872839" updateReferences="true"/>
+</session>

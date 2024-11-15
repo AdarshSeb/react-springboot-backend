@@ -25,7 +25,7 @@ import com.example.prescripto.services.DoctorService;
 
 @RestController
 @RequestMapping("/doctor")
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 public class DoctorController {
 	@Autowired
 	private DoctorService doctorService;

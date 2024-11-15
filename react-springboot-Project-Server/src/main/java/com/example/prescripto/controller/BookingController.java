@@ -24,7 +24,7 @@ import com.example.prescripto.services.DoctorService;
 
 @RestController
 @RequestMapping("/book")
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 public class BookingController {
 
 	@Autowired

@@ -18,7 +18,7 @@ import com.example.prescripto.services.CancelledBookingService;
 
 @RestController
 @RequestMapping("/cancel")
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 public class CancelledBookingController {
 	
 	
