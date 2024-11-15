@@ -2,15 +2,21 @@ package com.example.prescripto.dto;
 
 public class AppoinmentDTO {
 	
+	// from booking repo
+	
 	private String date;
     private String time;
     private Integer bookingId;
     private String status;
+    
+    // from patient repo
+    
     private String patientName;
     private String patientEmail;
     private String patientDob;
     private Float patientPhone;
     private Integer patientId;
+    
 	public String getDate() {
 		return date;
 	}
